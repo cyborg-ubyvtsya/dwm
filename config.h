@@ -17,6 +17,8 @@ static const char col_cyan[]        = "#005577";
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 }; */
+
+/* do change the absolute path on other devices */
 #include "/home/icarus/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
