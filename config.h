@@ -72,7 +72,7 @@ static const char *cmuscmd[] = { "urxvt", "-e", "sh", "-c", "cmus", NULL };
 static const char *browcmd[] = { "ungoogled-chromium", "--incognito", NULL };
 static const char *bitcoin[] = { "electrum", NULL };
 static const char *keepass[] = { "keepassxc", NULL };
-static const char *telegrm[] = { "telegram-desktop", NULL };
+static const char *telegrm[] = { "telegram", NULL }; /* Telegram should be downloaded from official website and installed into $PATH manually (thx pacman) */
 static const char *screens[] = { "scrot", "-s", NULL };
 
 
