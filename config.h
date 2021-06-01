@@ -25,10 +25,6 @@ static const char col_cyan[]        = "#005577";
 static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
@@ -69,11 +65,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, "-p", ">>>", NULL };
 static const char *clipmenu[] = { "clipmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, "-p", "Clipboard >>>", NULL };
 static const char *termcmd[] = { "urxvt", NULL };
-static const char *cmuscmd[] = { "urxvt", "-e", "sh", "-c", "cmus", NULL };
+static const char *muspcmd[] = { "urxvt", "-e", "sh", "-c", "mocp", NULL };
 static const char *browcmd[] = { "firefox", NULL };
 static const char *bitcoin[] = { "electrum", NULL };
 static const char *keepass[] = { "keepassxc", NULL };
-static const char *telegrm[] = { "telegram", NULL }; /* Telegram should be downloaded from official website and installed into $PATH manually (thx pacman) */
+static const char *telegrm[] = { "telegram", NULL };
 static const char *screens[] = { "scrot", "-s", NULL };
 
 
@@ -109,7 +105,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,	            		XK_q,	   setborderpx,    {.i = -1 } },
 	{ MODKEY,		            	XK_a,      setborderpx,    {.i = +1 } },
-	{ MODKEY|ShiftMask,	            XK_m,	   spawn,          {.v = cmuscmd } },
+	{ MODKEY|ShiftMask,	            XK_m,	   spawn,          {.v = muspcmd } },
 	{ MODKEY|ShiftMask,	            XK_i,	   spawn,          {.v = browcmd } },
 	{ MODKEY|ShiftMask,	            XK_b,	   spawn,          {.v = bitcoin } },
 	{ MODKEY|ShiftMask,	            XK_k,	   spawn,          {.v = keepass } },
